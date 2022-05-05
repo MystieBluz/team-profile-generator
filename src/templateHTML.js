@@ -1,5 +1,5 @@
 // Function to generate html Team Profile
-const generateTeamPro = () => {
+const generateTeamPro = (data) => {
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
