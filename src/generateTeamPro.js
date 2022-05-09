@@ -55,34 +55,34 @@ const createIntern = (intern) => {
 generateTeamPro = (data) => {
 
     // array for cards 
-    pageArray = []; 
+    teamQuestion = []; 
 
     for (let i = 0; i < data.length; i++) {
         const employee = data[i];
-        const role = employee.createTitle(); 
+        const title = employee.getTitle(); 
 
-        if (role === 'Manager') {
+        if (title === 'Manager') {
             const managerCard = createManager(employee);
 
-            pageArray.push(managerCard);
+            teamQuestion.push(managerCard);
         }
 
-        if (role === 'Engineer') {
+        if (title === 'Engineer') {
             const engineerCard = createEngineer(employee);
 
-            pageArray.push(engineerCard);
+            teamQuestion.push(engineerCard);
         }
 
-        if (role === 'Intern') {
+        if (title === 'Intern') {
             const internCard = createIntern(employee);
 
-            pageArray.push(internCard);
+            teamQuestion.push(internCard);
         }
         
     }
 
     // joining strings 
-    const teamCards = pageArray.join('')
+    const teamCards = teamQuestion.join('')
 
     // return to generated page
     const createTeam = generateTeamPage(teamCards); 
