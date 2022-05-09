@@ -91,7 +91,7 @@ const getEmployee = () => {
     ])
 
     .then(employeeInfo => {
-        let { name, id, email, role, github, school, confirmEmployee } = employeeInfo; 
+        let { name, id, email, title, github, school, confirmEmployee } = employeeInfo; 
         let employee; 
 
         if (title === "Engineer") {
