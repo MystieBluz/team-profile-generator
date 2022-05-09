@@ -53,7 +53,7 @@ const getEmployee = () => {
     return inquirer.prompt ([
         {
             type: 'list',
-            name: 'title',
+            name: 'role',
             message: 'Do you need to add an Engineer or Intern to the team?',
             choices: ['Engineer', 'Intern']
         },
@@ -88,6 +88,13 @@ const getEmployee = () => {
             message: 'What is the school name for the Intern?'
         },
 
+        {
+            type: 'confirm',
+            name: 'confirmGetEmployee',
+            message: 'Would you like to add more team members?',
+            default: false
+        }
+
     ])
 
     .then(employeeInfo => {
@@ -108,6 +115,7 @@ const getEmployee = () => {
         } else {
             return teamQuestions;
         }
+
     })
 
 };
