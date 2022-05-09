@@ -51,6 +51,14 @@ const createIntern = (intern) => {
 </div>`
 }
 
+// Function to generate Team Profile
+generateTeamPro = (data) => {
+    teamCards = [];
+    for (let i = 0; i < data.length; i++){
+        const employee = data[i];
+        const title = employee.teamTitle
+    }
+}
 
 
 
