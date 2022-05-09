@@ -21,7 +21,7 @@ const createEngineer = (engineer) => {
     <div span class="border border-dark"></span>
         <div class="card-header text-black bg-light">
             <h3>${engineer.name}</h3>
-            <h5><i class="fa-solid fa-user-astronaut"></i>Engineer</h5>
+            <h5><i class="fa-solid fa-user-astronaut"></i>${engineer.title}</h5>
         </div>
         <!-- Card 2 Info -->
         <div class="list-group-item card-body text-black bg-info">
@@ -39,7 +39,7 @@ const createIntern = (intern) => {
     <div span class="border border-dark"></span>
         <div class="card-header text-black bg-light">
             <h3>${intern.name}</h3>
-            <h5><i class="fa-solid fa-graduation-cap"></i>Intern</h5>
+            <h5><i class="fa-solid fa-graduation-cap"></i>${intern.title}</h5>
         </div>
         <!-- Card 4 Info -->
         <div class="list-group-item card-body text-black bg-info">
@@ -126,7 +126,7 @@ const generateTeamPage = function (teamCards){
               <main>
                   <div class="continaer">
                       <div class="row justify-content-center">
-                        ${employeeCards}
+                        ${teamCards}
                       </div>
                   </div>
               </main>
