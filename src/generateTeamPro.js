@@ -1,5 +1,5 @@
 // Functions to generate html Team Profile
-const createManager = (manager) => {
+const generateManager = function (manager) {
     return `<div class="col-3 mt-4">
         <div span class="border border-dark"></span>
         <div class="card-header text-black bg-light" >
@@ -16,12 +16,12 @@ const createManager = (manager) => {
 </div>`
 }
 
-const createEngineer = (engineer) => {
+const generateEngineer = function (engineer) {
     return `<div class="col-3 mt-4">
     <div span class="border border-dark"></span>
         <div class="card-header text-black bg-light">
             <h3>${engineer.name}</h3>
-            <h5><i class="fa-solid fa-user-astronaut"></i>${engineer.title}</h5>
+            <h5><i class="fa-solid fa-user-astronaut"></i>Engineer</h5>
         </div>
         <!-- Card 2 Info -->
         <div class="list-group-item card-body text-black bg-info">
@@ -34,12 +34,12 @@ const createEngineer = (engineer) => {
 `
 }
 
-const createIntern = (intern) => {
+const generateIntern = function (intern) {
     return `<div class="col-4 mt-4">
     <div span class="border border-dark"></span>
         <div class="card-header text-black bg-light">
             <h3>${intern.name}</h3>
-            <h5><i class="fa-solid fa-graduation-cap"></i>${intern.title}</h5>
+            <h5><i class="fa-solid fa-graduation-cap"></i>Intern</h5>
         </div>
         <!-- Card 4 Info -->
         <div class="list-group-item card-body text-black bg-info">
@@ -51,46 +51,43 @@ const createIntern = (intern) => {
 </div>`
 }
 
-// push array to page 
 generateTeamPro = (data) => {
-
-    // array for cards 
-    teamQuestion = []; 
+    pageArray = []; 
 
     for (let i = 0; i < data.length; i++) {
         const employee = data[i];
-        const title = employee.getTitle(); 
+        const role = employee.getRole(); 
 
-        if (title === 'Manager') {
-            const managerCard = createManager(employee);
 
-            teamQuestion.push(managerCard);
+        // call manager function
+        if (role === 'Manager') {
+            const managerCard = generateManager(employee);
+
+            pageArray.push(managerCard);
         }
 
-        if (title === 'Engineer') {
-            const engineerCard = createEngineer(employee);
+        if (role === 'Engineer') {
+            const engineerCard = generateEngineer(employee);
 
-            teamQuestion.push(engineerCard);
+            pageArray.push(engineerCard);
         }
 
-        if (title === 'Intern') {
-            const internCard = createIntern(employee);
+        if (role === 'Intern') {
+            const internCard = generateIntern(employee);
 
-            teamQuestion.push(internCard);
+            pageArray.push(internCard);
         }
         
     }
 
-    // joining strings 
-    const teamCards = teamQuestion.join('')
+    const employeeCards = pageArray.join('')
 
-    // return to generated page
-    const createTeam = generateTeamPage(teamCards); 
-    return createTeam;
+    const generateTeam = generateTeamPage(employeeCards); 
+    return generateTeam;
 
 }
 
-const generateTeamPage = function (teamCards){
+const generateTeamPage = function (employeeCards){
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -125,7 +122,7 @@ const generateTeamPage = function (teamCards){
               <main>
                   <div class="continaer">
                       <div class="row justify-content-center">
-                        ${teamCards}
+                        ${employeeCards}
                       </div>
                   </div>
               </main>
