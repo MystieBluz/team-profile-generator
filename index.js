@@ -94,10 +94,10 @@ const getEmployee = () => {
         let { name, id, email, role, github, school, confirmEmployee } = employeeInfo; 
         let employee; 
 
-        if (role === "Engineer") {
+        if (title === "Engineer") {
             employee = new Engineer (name, id, email, github);
 
-        } else if (role === "Intern") {
+        } else if (title === "Intern") {
             employee = new Intern (name, id, email, school);
         }
 
