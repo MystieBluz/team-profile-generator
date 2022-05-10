@@ -37,4 +37,4 @@
 ![](./dist/images/Screen%20Shot%202022-05-09%20at%208.45.36%20PM.png)
 
 ### Live Demo
-![]
+![](./dist/images/Team%20Profile%20Generator%20Video.mp4)
