@@ -78,14 +78,14 @@ generateTeamPro = (data) => {
         
     }
 
-    const teamCards = teamArray.join('')
+    const teamInfo = teamArray.join('')
 
-    const generateTeam = generateTeamPage(teamCards); 
+    const generateTeam = generateTeamPage(teamInfo); 
     return generateTeam;
 
 }
 
-const generateTeamPage = function (teamCards){
+const generateTeamPage = function (teamInfo){
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -120,7 +120,7 @@ const generateTeamPage = function (teamCards){
               <main>
                   <div class="continaer">
                       <div class="row justify-content-center">
-                        ${teamCards}
+                        ${teamInfo}
                       </div>
                   </div>
               </main>
