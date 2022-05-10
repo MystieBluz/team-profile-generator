@@ -20,7 +20,7 @@
   This application utilizes the inquirer module for collecting input from the user and Jest for running unit tests. 
 
   ## Contributors
-  Please feel free to contact me for further information regarding guidelines. My contact information is located under the Questionsection.
+  Please feel free to contact me for further information regarding guidelines. My contact information is located under the Questions section.
 
   ## Tests
   From the terminal, execute npm run test and ensure all tests pass prior to proceeding. This allows Jest to run tests on the constructors.
