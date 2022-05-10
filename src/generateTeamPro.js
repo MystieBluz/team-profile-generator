@@ -26,7 +26,7 @@ const generateEngineer = function (engineer) {
         <!-- Card 2 Info -->
         <div class="list-group-item card-body text-black bg-info">
             <p class="id">ID: ${engineer.id}</p>
-            <p class="email">Email: <a href="${engineer.email}">${engineer.email}</a></p>
+            <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
             <p class="github">GitHub: <a href="https://github.com/${engineer.github}" target="blank">${engineer.github}</a></p>
         </div>
     </div>
