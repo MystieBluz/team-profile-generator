@@ -52,42 +52,40 @@ const generateIntern = function (intern) {
 }
 
 generateTeamPro = (data) => {
-    pageArray = []; 
+    teamArray = []; 
 
     for (let i = 0; i < data.length; i++) {
         const employee = data[i];
         const role = employee.getRole(); 
 
-
-        // call manager function
         if (role === 'Manager') {
             const managerCard = generateManager(employee);
 
-            pageArray.push(managerCard);
+            teamArray.push(managerCard);
         }
 
         if (role === 'Engineer') {
             const engineerCard = generateEngineer(employee);
 
-            pageArray.push(engineerCard);
+            teamArray.push(engineerCard);
         }
 
         if (role === 'Intern') {
             const internCard = generateIntern(employee);
 
-            pageArray.push(internCard);
+            teamArray.push(internCard);
         }
         
     }
 
-    const employeeCards = pageArray.join('')
+    const teamCards = teamArray.join('')
 
-    const generateTeam = generateTeamPage(employeeCards); 
+    const generateTeam = generateTeamPage(teamCards); 
     return generateTeam;
 
 }
 
-const generateTeamPage = function (employeeCards){
+const generateTeamPage = function (teamCards){
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -122,7 +120,7 @@ const generateTeamPage = function (employeeCards){
               <main>
                   <div class="continaer">
                       <div class="row justify-content-center">
-                        ${employeeCards}
+                        ${teamCards}
                       </div>
                   </div>
               </main>
